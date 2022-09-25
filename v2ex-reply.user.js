@@ -16,7 +16,7 @@
 
     var replyList = document.querySelectorAll("div.cell table tbody tr td:nth-child(3) div.reply_content")
     var replyContents = Array.from(replyList, i => i.innerHTML)
-    var firstReplyNo = Number(document.querySelector(".no").innerHTML);
+    var firstReplyNo = document.querySelector(".no").innerHTML;
 
     var userList = document.querySelectorAll("div.cell table tbody tr td:nth-child(3) strong a")
     var users = Array.from(userList, i => i.innerHTML)
