@@ -15,30 +15,31 @@
     'use strict';
 
     var replyList = document.querySelectorAll("div.cell table tbody tr td:nth-child(3) div.reply_content")
-    var replyContents = Array.from(replyList, i => i.innerHTML)
-    var firstReplyNo = document.querySelector(".no").innerHTML;
+    var replyContents = Array.from(replyList, i => i.innerText)
+    var topReplyindex = Number(document.querySelector(".no").innerText);
 
     var userList = document.querySelectorAll("div.cell table tbody tr td:nth-child(3) strong a")
-    var users = Array.from(userList, i => i.innerHTML)
+    var users = Array.from(userList, i => i.innerText)
 
     var commentList = document.querySelectorAll("#Main div:nth-child(4) div[id].cell");
 
     let i = 1;
+    const indexRegex = /\s#(\d+)/g;
     while (i < commentList.length) {
         if (replyContents[i].match("楼上")) {
             replyList[i - 1].appendChild(commentList[i]);
         }
 
-        const regexp = / #(\d+) /g;
-        if (replyContents[i].match(regexp)) {
-            var nums = [...replyContents[i].matchAll(regexp)];
-            for (const num of nums) {
-                if (num[1] - firstReplyNo > 0) {
+        if (replyContents[i].match(indexRegex)) {
+            var indexs = [...replyContents[i].matchAll(indexRegex)];
+            for (const index of indexs) {
+                if (index[1] - topReplyindex > 0) {
                     var commentClone = commentList[i].cloneNode(true);
-                    replyList[num[1] - firstReplyNo].appendChild(commentClone);
+                    replyList[index[1] - topReplyindex].appendChild(commentClone);
                     commentList[i].remove();
                 }
             }
+
         } else {
             for (var j = i - 1; j >= 0; j--) {
                 if (replyContents[i].match(users[j])) {
