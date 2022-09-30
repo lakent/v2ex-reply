@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name                v2ex-reply
-// @name:cn             V2EX 楼中楼
+// @name:zh-CN          V2EX 楼中楼
 // @namespace           v2ex-reply
 // @version             1.3.0
 // @description         查看 V2EX 楼中楼。
