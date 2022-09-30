@@ -32,7 +32,7 @@
         indexs = [...replyContents[i].matchAll(indexRegex)];
         if (indexs.length) {
             for (const index of indexs) {
-                if (index[1] - topReplyindex > 0) {
+                if (index[1] - topReplyindex >= 0) {
                     var commentClone = commentList[i].cloneNode(true);
                     replyList[index[1] - topReplyindex].appendChild(commentClone);
 
