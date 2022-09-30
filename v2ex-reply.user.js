@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name                v2ex-reply
-// @name:cn             V2ex 楼中楼
+// @name:cn             V2EX 楼中楼
 // @namespace           v2ex-reply
 // @version             1.3.0
-// @description         V2ex 楼中楼查看
+// @description         查看 V2EX 楼中楼。
 // @author              lakent
 // @match               *://*.v2ex.com/t/*
 // @grant               none
