@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name                V2ex 楼中楼
 // @namespace           v2ex-reply
-// @version             1.2.9
-// @description         V2ex 楼中楼
+// @version             1.3.0
+// @description         V2ex 楼中楼查看
 // @author              lakent
 // @match               *://*.v2ex.com/t/*
 // @grant               none
@@ -35,7 +35,6 @@
                 if (index[1] - topReplyindex >= 0) {
                     var commentClone = commentList[i].cloneNode(true);
                     replyList[index[1] - topReplyindex].appendChild(commentClone);
-
                 }
             }
             commentList[i].remove();
